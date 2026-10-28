@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Health Connect Export</string>
+
+    <string name="hc_available">Health Connect is available.</string>
+    <string name="hc_update_required">Health Connect needs an update.</string>
+    <string name="hc_unavailable">Health Connect isn’t available on this phone.</string>
+    <string name="hc_install_update">Install or update Health Connect</string>
+    <string name="hc_open_settings">Health Connect permissions</string>
+
+    <string name="categories_title">Categories</string>
+    <string name="not_granted">Not allowed</string>
+    <string name="grant_selected">Allow selected categories</string>
+    <string name="permission_denied_hint">Some categories still aren’t allowed. Use Health Connect permissions in Settings.</string>
+
+    <string name="range_days">Last %1$d days</string>
+
+    <string name="create_export">Create export</string>
+    <string name="exporting">Reading Health Connect…</string>
+    <string name="need_selection">Select at least one category.</string>
+    <string name="need_grant">Allow %1$s in Health Connect, or deselect it.</string>
+    <string name="export_done">Export created: %1$d days, %2$s.</string>
+    <string name="export_failed_permission">Health Connect access for %1$s was revoked while exporting. No file was created. Grant access again or deselect it.</string>
+    <string name="export_failed_interrupted">Health Connect stopped the read before it finished, probably because the app left the screen. No file was created. Keep the app open and try again.</string>
+    <string name="export_failed_generic">Health Connect could not be read (%1$s). No file was created. Keep the app open and try again.</string>
+    <string name="export_failed_bounds">%1$s on %2$s is outside the range the site accepts. No file was created. Check the source app\'s data in Health Connect.</string>
+    <string name="export_failed_timezone">Your device time zone (%1$s) is not a named region. Set a region time zone in system settings and try again.</string>
+
+    <string name="preview_title">Latest export</string>
+    <string name="preview_help">A dash means no records that day.</string>
+    <string name="no_data">—</string>
+    <string name="partial">partial</string>
+
+    <string name="exports_title">Saved exports</string>
+    <string name="exports_empty">No exports on this device.</string>
+    <string name="share">Share…</string>
+    <string name="save">Save to Files…</string>
+    <string name="delete">Delete</string>
+    <string name="delete_all">Delete all exports</string>
+    <string name="confirm_share_title">Share health summaries?</string>
+    <string name="confirm_share_body">This file contains your daily health summaries (%1$s). Any app or person you send it to can read it. Upload it only to your own private site.</string>
+    <string name="confirm_delete_title">Delete export?</string>
+    <string name="confirm_delete_body">This permanently deletes the file from this app. Copies you already shared or saved elsewhere are not affected, and data already uploaded stays on your site until you delete it there.</string>
+    <string name="confirm_delete_all_body">This permanently deletes every export stored in this app. Copies you shared or saved elsewhere are not affected.</string>
+    <string name="cancel">Cancel</string>
+    <string name="continue_label">Continue</string>
+    <string name="saved_to_files">Saved a copy to the location you chose.</string>
+    <string name="save_failed">Could not save the file there.</string>
+    <string name="no_share_target">No app on this device can receive the file.</string>
+
+    <string name="open_site">Open private site</string>
+    <string name="upload_hint">Upload it on your private site only if you don’t use automatic sync.</string>
+
+    <string name="manual_title">Export to file</string>
+
+    <string name="sync_not_configured">This build’s built-in site address is invalid. Rebuild it with a valid https:// origin.</string>
+    <string name="next_run_at">Next automatic sync: around %1$s or later.</string>
+    <string name="next_run_unknown">Next automatic sync: in about 15 minutes or later.</string>
+    <string name="last_attempt_failed">Last attempt %1$s failed: %2$s.</string>
+
+    <string name="code_hint">Connection code</string>
+    <string name="paste_code">Paste connection code</string>
+    <string name="connect">Connect</string>
+    <string name="pair_help">The code is a secret key. It works once, for 5 minutes. Connecting replaces any other paired phone.</string>
+    <string name="clipboard_empty">The clipboard is empty. Copy the code on your site first.</string>
+    <string name="connecting">Connecting to your site…</string>
+    <string name="connected">Connected as %1$s.</string>
+    <string name="code_malformed">That isn’t a connection code. Copy it again on your site.</string>
+    <string name="code_wrong_site">That code is for a different site.</string>
+    <string name="code_unsafe_site">That code isn’t for a public HTTPS site. Create a code on your own private site.</string>
+    <string name="confirm_site_title">Connect to this site?</string>
+    <string name="confirm_site_body">Continue only if this is your own private site. Your health summaries will be sent here.</string>
+    <string name="confirm_site_unusual">This isn’t a chatgpt.site address.</string>
+    <string name="connect_cancelled">Not connected. Nothing was sent.</string>
+    <string name="code_help_title">Where do I get a code?</string>
+    <string name="code_help_body">Open your own private Health Connect Summaries site (your copy, set up with ChatGPT Sites), sign in, and tap Create connection code. Each person uses their own site.</string>
+    <string name="ok">OK</string>
+    <string name="code_expired">That code expired or was already used. Create a new one on your site.</string>
+    <string name="pair_access_denied">Your site refused this code. Create a new one and try again.</string>
+    <string name="pair_offline">Couldn’t reach your site. Check the connection and try again.</string>
+    <string name="pair_failed">Pairing failed. Create a new code and try again.</string>
+
+    <string name="auto_switch">Automatic sync</string>
+    <string name="auto_consent_title">Turn on automatic sync?</string>
+    <string name="auto_consent_body">The app will read daily totals for %1$s from Health Connect in the background and upload the last 30 days to your private site, about every 15 minutes or later. Health Connect will ask to allow background access. This does not turn on ChatGPT access.</string>
+    <string name="auto_consent_accept">Turn on</string>
+    <string name="auto_turned_on">Automatic sync is on.</string>
+    <string name="auto_turned_off">Automatic sync is off. Data on your site is kept.</string>
+    <string name="auto_needs_background">Background access wasn’t allowed, so automatic sync stays off.</string>
+    <string name="auto_scheduling_note">Best effort, not real time: Android decides when background work runs and may delay it for battery saver, Doze, or no network.</string>
+    <string name="sync_now">Sync now</string>
+    <string name="sync_foreground_running">Syncing. Keep the app open…</string>
+    <string name="sync_done">Synced %1$d days to your site.</string>
+    <string name="sync_failed">Sync failed: %1$s.</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="disconnect_title">Disconnect from your site?</string>
+    <string name="disconnect_body">Sync stops and this phone’s credentials are revoked and erased. Data on your site is kept.</string>
+    <string name="disconnected_remote">Disconnected.</string>
+    <string name="disconnected_offline">Disconnected here, but your site couldn’t be reached. Also disconnect the phone on your site.</string>
+    <string name="disconnected_local">Disconnected.</string>
+
+    <string name="pause_not_paired">This phone isn’t connected.</string>
+    <string name="pause_revoked">This phone was disconnected by your site. Paste a new code to pair again.</string>
+    <string name="pause_access_denied">Your site refused this phone. Disconnect and pair again.</string>
+    <string name="pause_hc_unavailable">Health Connect is unavailable or needs an update.</string>
+    <string name="pause_background_unsupported">This phone can’t sync in the background. Use Sync now.</string>
+    <string name="pause_background_permission">Background access to Health Connect is off.</string>
+    <string name="pause_permission">Health Connect access needed for %1$s.</string>
+    <string name="pause_no_categories">No categories selected.</string>
+
+    <string name="fail_offline">your site could not be reached</string>
+    <string name="fail_health_connect">Health Connect could not be read right now</string>
+    <string name="fail_stale">your site already has newer data for these dates</string>
+    <string name="fail_rejected">your site rejected the data</string>
+    <string name="fail_timezone">the phone\'s time zone is not a named region</string>
+    <string name="fail_bounds">a value is outside the range your site accepts</string>
+    <string name="fail_interrupted">the read was interrupted; keep the app open</string>
+    <string name="fail_unexpected">unexpected response from your site</string>
+
+    <!-- Main screen: one status word, the last successful sync, one short note, one action. -->
+    <string name="overall_ready">Ready</string>
+    <string name="overall_connected">Connected</string>
+    <string name="setup_step">Step %1$d of 3 · %2$s</string>
+    <string name="setup_step_1">Connect your private site</string>
+    <string name="setup_step_2">Choose health data</string>
+    <string name="setup_step_3">Sync and ChatGPT access</string>
+    <string name="note_choose_data">Health Connect will ask which categories to share.</string>
+    <string name="choose_data_none">No categories allowed yet. Tap Continue to choose them in Health Connect.</string>
+    <string name="overall_attention">Needs attention</string>
+    <string name="overall_syncing">Syncing</string>
+    <string name="overall_waiting">Waiting</string>
+    <string name="overall_not_connected">Not connected</string>
+    <string name="last_sync">Last sync: %1$s</string>
+    <string name="last_sync_never">Last sync: not yet</string>
+    <string name="note_revoked">Disconnected by your site. Pair again below.</string>
+    <string name="note_permission">Health Connect access needed for %1$s.</string>
+    <string name="note_background_permission">Background access to Health Connect is off.</string>
+    <string name="note_permission_generic">Health Connect access needed.</string>
+    <string name="note_queued">Sync queued.</string>
+    <string name="note_waiting_network">Waiting for a network.</string>
+    <string name="note_retrying">Last try failed (%1$s). Retrying soon.</string>
+    <string name="note_access_off">ChatGPT access is off.</string>
+    <string name="note_access_off_last_known">ChatGPT access was off at the last check.</string>
+    <string name="note_access_checking">Checking ChatGPT access…</string>
+    <string name="note_access_not_checked">ChatGPT access not checked yet.</string>
+    <string name="note_access_unknown">Couldn’t check ChatGPT access: %1$s.</string>
+    <string name="note_access_outdated">Your site doesn’t report ChatGPT access yet.</string>
+    <string name="note_access_stale">Last known. Couldn’t check: %1$s.</string>
+    <string name="action_turn_on_access">Turn on ChatGPT access</string>
+    <string name="action_choose_categories">Choose categories</string>
+    <string name="pair_steps">On your site: Create connection code, then Copy. Paste it here.</string>
+    <string name="settings_title">Settings</string>
+    <string name="details_title">Details</string>
+    <string name="advanced_title">Advanced</string>
+    <string name="section_toggle">%1$s  %2$s</string>
+    <string name="not_chatgpt_health">Separate from ChatGPT Health.</string>
+
+    <string name="with_symbol">%1$s %2$s</string>
+    <string name="time_with_relative">%1$s (%2$s)</string>
+    <string name="range_from_to">%1$s to %2$s</string>
+    <string name="this_phone">This phone</string>
+    <string name="no_browser">No browser is available to open your private site.</string>
+
+    <string name="action_turn_on_auto">Turn on automatic sync</string>
+    <string name="action_fix_health_connect">Fix in Health Connect</string>
+    <string name="action_open_access">Open ChatGPT access</string>
+    <string name="action_open_access_description">Open ChatGPT access on your private site, in the browser</string>
+    <string name="refresh_status">Check status</string>
+    <string name="checking_status">Checking…</string>
+    <string name="syncing_now_button">Syncing…</string>
+
+    <string name="row_description">%1$s: %2$s</string>
+    <string name="row_label_connection">Phone connection</string>
+    <string name="row_label_sync">Sync to your site</string>
+    <string name="row_label_background">Background sync</string>
+    <string name="row_label_access">ChatGPT read access</string>
+
+    <string name="row_connected">Connected</string>
+    <string name="row_connected_detail">%1$s</string>
+    <string name="row_not_connected">Not connected</string>
+    <string name="row_not_connected_detail">Paste a connection code above.</string>
+    <string name="row_revoked">Disconnected by your site</string>
+    <string name="row_revoked_detail">Pair again with a new code.</string>
+    <string name="row_no_site">No site</string>
+
+    <string name="row_sync_completed">Completed</string>
+    <string name="row_sync_running">Syncing now</string>
+    <string name="row_sync_queued">Queued</string>
+    <string name="row_sync_not_done">Not done yet</string>
+    <string name="row_sync_none">Nothing sent yet.</string>
+    <string name="row_sync_first_running">Sending the last 30 days.</string>
+    <string name="row_sync_first_queued">Waiting to run.</string>
+    <string name="row_last_success">Last: %1$s</string>
+    <string name="row_covered">Covered %1$s.</string>
+    <string name="activity_queued">New sync queued.</string>
+    <string name="activity_waiting_network">Waiting for a network.</string>
+    <string name="activity_running">Syncing again…</string>
+    <string name="activity_retrying">Last try failed (%1$s). Retrying soon.</string>
+    <string name="activity_failed">Last try failed: %1$s.</string>
+    <string name="activity_paused">Paused. %1$s</string>
+
+    <string name="row_on">On</string>
+    <string name="row_off">Off</string>
+    <string name="row_paused">Paused</string>
+    <string name="row_unavailable">Not available</string>
+    <string name="row_unknown">Unknown</string>
+    <string name="row_on_last_known">On (last known)</string>
+    <string name="row_off_last_known">Off (last known)</string>
+    <string name="row_checking">Checking…</string>
+    <string name="row_not_checked">Not checked yet</string>
+    <string name="row_couldnt_check">Couldn’t check</string>
+    <string name="row_connect_first">Connect first.</string>
+    <string name="row_background_on">About every 15 minutes or later.</string>
+    <string name="row_background_next">Next around %1$s or later.</string>
+    <string name="row_background_off">Turn on in Settings.</string>
+    <string name="row_background_unavailable">Not supported on this phone. Use Sync now.</string>
+
+    <string name="access_on_detail">Checked %1$s.</string>
+    <string name="access_on_stale_detail">Last checked %1$s. Couldn’t check again: %2$s.</string>
+    <string name="access_off_detail">Only your site can turn it on. Checked %1$s.</string>
+    <string name="access_off_stale_detail">Last checked %1$s. Couldn’t check again: %2$s.</string>
+    <string name="access_checking_detail">Asking your site…</string>
+    <string name="access_unchecked_detail">Not checked yet.</string>
+    <string name="access_failed_detail">%1$s.</string>
+    <string name="access_refreshing">Checking again…</string>
+    <string name="check_fail_offline">your site could not be reached</string>
+    <string name="check_fail_outdated">your site doesn’t report it yet (it needs an update)</string>
+    <string name="check_fail_denied">your site refused this phone’s access key</string>
+    <string name="check_fail_unexpected">unexpected response from your site</string>
+
+    <string name="pair_title">Connect this phone</string>
+
+    <string name="expanded">Expanded</string>
+    <string name="collapsed">Collapsed</string>
+    <string name="tech_title">Technical</string>
+    <string name="tech_site">Site: %1$s</string>
+    <string name="tech_none">none</string>
+    <string name="tech_none_generic">not connected yet</string>
+    <string name="tech_build_pinned">Build: built-in site only.</string>
+    <string name="tech_build_generic">Build: any private site, confirmed when pairing.</string>
+    <string name="tech_paired">Paired as %1$s since %2$s.</string>
+    <string name="tech_health_connect">%1$s</string>
+    <string name="tech_background_feature">Background reading supported: %1$s</string>
+    <string name="tech_background_permission">Background permission granted: %1$s</string>
+    <string name="tech_yes">yes</string>
+    <string name="tech_no">no</string>
+    <string name="tech_last_attempt">Last sync attempt %1$s succeeded.</string>
+    <string name="tech_site_last_sync">Site’s record of this phone’s last sync: %1$s.</string>
+    <string name="tech_last_check">Last status check: %1$s.</string>
+    <string name="tech_last_check_failed">Last status check %1$s failed: %2$s.</string>
+    <string name="tech_version">App version %1$s (%2$d).</string>
+
+    <string name="privacy_button">Privacy policy</string>
+
+    <string name="privacy_title">Privacy policy</string>
+    <string name="privacy_close">Close</string>
+    <string name="privacy_body">Health Connect Export reads data from Health Connect only for the categories you select and grant: steps, sleep, heart rate, weight, distance, and active calories. It requests read access only and never writes to Health Connect.\n\nWhat it reads: daily totals or averages computed by the Health Connect aggregate API for each local day (sleep for the night ending each day, 18:00 to 18:00). It never sends individual samples, sleep stages, or source apps.\n\nWhen it reads: when you tap Sync now or Create export, and, only if you turn on Automatic sync and allow background access, periodically in the background. Android schedules background runs at most about every 15 minutes and often later.\n\nWhere the data goes: sync sends the last 30 days of daily values over HTTPS directly to the one private site this app is paired with (built into the app, or the site whose address you confirmed when pairing), and nowhere else. To pair, you paste a one-time connection code from your site; the app keeps the resulting credentials encrypted with an Android Keystore key. When you open the app or tap Check status, it also asks your site whether this phone is still connected, when it last synced, and whether ChatGPT access is on; that request sends no health data. The app has no analytics or advertising, does not log health values, and is excluded from Android backup and device transfer. Optional export files stay in the app\'s private storage until you choose Share or Save to Files.\n\nWhy: so your own private ChatGPT plugin can read the daily summaries when you allow it on your site. This is separate from ChatGPT Health and does not connect to it. Pairing does not turn on ChatGPT access.\n\nYour controls: turn off Automatic sync, disconnect (revokes and erases the credentials), revoke any category or background access in Health Connect, delete exports in this app, and delete data or turn off ChatGPT access on your site.\n\nThis app is not a medical device and does not provide medical advice.</string>
+</resources>

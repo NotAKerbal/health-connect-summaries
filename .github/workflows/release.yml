@@ -1,0 +1,79 @@
+# Manual only. Builds a release APK as a workflow artifact; it never publishes anything.
+# Signed builds run in the protected "release" environment (add required reviewers there),
+# which holds the signing secrets. Forks and pull requests cannot start this workflow.
+name: Release build
+
+on:
+  workflow_dispatch:
+    inputs:
+      signed:
+        description: Sign with the release key (protected "release" environment)
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  unsigned:
+    if: ${{ !inputs.signed }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: android
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: gradle/actions/wrapper-validation@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6.4.0
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: 17
+      - run: ./gradlew --no-daemon testDebugUnitTest assembleRelease
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: health-connect-export-release-unsigned
+          path: android/app/build/outputs/apk/release/app-release-unsigned.apk
+          if-no-files-found: error
+          retention-days: 14
+
+  signed:
+    if: ${{ inputs.signed }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    environment: release
+    defaults:
+      run:
+        working-directory: android
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: gradle/actions/wrapper-validation@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6.4.0
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Build signed release
+        env:
+          HC_RELEASE_KEYSTORE_BASE64: ${{ secrets.HC_RELEASE_KEYSTORE_BASE64 }}
+          HC_RELEASE_STORE_PASSWORD: ${{ secrets.HC_RELEASE_STORE_PASSWORD }}
+          HC_RELEASE_KEY_ALIAS: ${{ secrets.HC_RELEASE_KEY_ALIAS }}
+          HC_RELEASE_KEY_PASSWORD: ${{ secrets.HC_RELEASE_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          umask 077
+          export HC_RELEASE_STORE_FILE="$RUNNER_TEMP/release.jks"
+          trap 'rm -f "$HC_RELEASE_STORE_FILE"' EXIT
+          printf '%s' "$HC_RELEASE_KEYSTORE_BASE64" | base64 --decode > "$HC_RELEASE_STORE_FILE"
+          unset HC_RELEASE_KEYSTORE_BASE64
+          if [ ! -s "$HC_RELEASE_STORE_FILE" ]; then echo "HC_RELEASE_KEYSTORE_BASE64 is not set." >&2; exit 1; fi
+          ./gradlew --no-daemon testDebugUnitTest assembleRelease -PhcRequireReleaseSigning=true
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: health-connect-export-release-signed
+          path: android/app/build/outputs/apk/release/app-release.apk
+          if-no-files-found: error
+          retention-days: 14

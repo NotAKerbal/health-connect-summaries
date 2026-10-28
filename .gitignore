@@ -1,0 +1,47 @@
+# Toolchains and dependencies
+.toolchain/
+node_modules/
+.gradle/
+.kotlin/
+
+# Build output
+build/
+dist/
+.next/
+.vinext/
+out/
+outputs/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local tool state
+.wrangler/
+.sites-runtime/
+.idea/
+*.iml
+captures/
+.DS_Store
+__pycache__/
+
+# Secrets and local configuration
+.env*
+.dev.vars*
+local.properties
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+
+# Binaries, health data, and databases
+*.apk
+*.aab
+*.sqlite
+*.sqlite3
+*.db
+*.db-*
+health-connect-export-*.json
+cloud/public/downloads/
+*.log

@@ -1,0 +1,17 @@
+{
+  "//": "Backend-only typecheck that needs no Sites starter files (used by CI on the public repository).",
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node", "@cloudflare/workers-types"]
+  },
+  "include": ["cloudflare-env.d.ts", "lib/health/**/*.ts", "db/schema.ts", "test/**/*.ts", "scripts/sync-check.ts"]
+}
